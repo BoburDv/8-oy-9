@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .simple-mode {
+    @apply bg-[url('../img/triangle.png')];
+  }
+
+  .advanced-mode {
+    @apply bg-[url('../img/Polygon.png')];
+  }
+
+  .advanced-mode ul > li > img {
+    width: 145px;
+    height: 148px;
+  }
+
+  .simple-mode ul {
+    @apply grid-cols-2 gap-x-20 gap-y-6;
+  }
+
+  .advanced-mode ul {
+    @apply gap-x-[52px] gap-y-[38px];
+  }
+
+  .advanced-mode ul > li:nth-child(1) {
+    grid-column: 1/3;
+    place-self: center;
+    margin-bottom: -50px;
+  }
+
+  .advanced-mode ul > li:nth-child(2) {
+    place-self: start;
+  }
+
+  .advanced-mode ul > li:nth-child(3) {
+    place-self: end;
+  }
+
+  .advanced-mode ul > li:nth-child(4) {
+    place-self: end;
+  }
+
+  .advanced-mode ul > li:nth-child(5) {
+    place-self: start;
+  }
+
+  .simple-mode ul > li:nth-child(3) {
+    grid-column: 1 / 3;
+    place-self: center;
+  }
+
+  .simple-mode ul > li:nth-child(4){
+    display: none;
+  }
+
+  .simple-mode ul > li:nth-child(5) {
+    display: none;
+  }
+}

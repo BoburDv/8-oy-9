@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
+    <title>RockPaperScissors</title>
+  </head>
+  <body class="bg-blue-950">
+    <div class="max-w-[700px] mx-auto w-full flex mt-8 rounded-lg border border-white justify-between">
+      <div class="px-6 py-6">
+        <img src="img/ROCK PAPER SCISSORS.png" alt="" />
+      </div>
+      <div class="bg-white px-10 rounded-lg flex flex-col items-center justify-center m-4">
+        <div class="text-[#2A45C2]">SCORE</div>
+        <div id="score" class="text-5xl text-center">0</div>
+      </div>
+    </div>
+
+    <!-- Game Zone -->
+    <section id="gameZone">
+      <div class="max-w-[476px] w-full mt-[72px] mx-auto bg-no-repeat bg-center" data-mode="simple" id="gameZoneInner">
+        <ul class="grid grid-cols-2 place-items-center relative">
+          <li>
+            <button class="hand">
+              <img src="img/paper.svg" alt="paper" class="w-44" />
+            </button>
+          </li>
+          <li>
+            <button class="hand">
+              <img src="img/rock.svg" alt="rock" class="w-44" />
+            </button>
+          </li>
+          <li class="col-span-2">
+            <button class="hand">
+              <img src="img/scissors.svg" alt="scissors" class="w-44" />
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Result Section -->
+    <section id="secondGameZone" class="hidden">
+      <div class="flex items-center justify-between w-full mt-[72px] max-w-[800px] mx-auto">
+        <div>
+          <img src="img/paper.svg" id="user" class="w-64" />
+        </div>
+        <div class="px-16 text-center">
+          <p id="status" class="text-white text-4xl mb-4"></p>
+          <button
+            id="refreshGame"
+            class="text-center w-52 py-4 uppercase bg-white rounded-lg text-blue-800 font-semibold"
+          >
+            Play again
+          </button>
+        </div>
+        <div>
+          <img src="img/hand-load.svg" id="robot" class="w-64" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Rules/Button -->
+    <div class="absolute right-8 bottom-8">
+      <button id="rulesBtn" class="btn py-3 px-9 border border-white rounded-lg text-white">RULES</button>
+      <dialog id="modal" class="modal rounded-lg">
+        <div class="modal-box relative">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-8 top-6">close</button>
+          </form>
+          <div class="p-6">
+            <h1 class="text-3xl">RULES</h1>
+            <div class="pt-6">
+              <img src="img/rule-basic.png" id="ruleImage" />
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

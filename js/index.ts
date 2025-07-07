@@ -64,7 +64,3 @@ elRefreshBtn.addEventListener("click", function () {
   elStatus.innerText = "";
   sectionSwapper(false);
 });
-
-elRulesBtn.addEventListener("click", function () {
-  elModal.showModal();
-});

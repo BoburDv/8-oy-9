@@ -2,25 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="src/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>RockPaperScissors</title>
   </head>
-  <body class="bg-blue-950">
-    <div class="max-w-[700px] mx-auto w-full flex mt-8 rounded-lg border border-white justify-between">
+  <body class="bg-gradient min-h-screen pt-8">
+    <div class="max-w-[700px] mx-auto w-full flex rounded-lg border-2 border-slate-400 justify-between gap-4">
       <div class="px-6 py-6">
         <img src="img/ROCK PAPER SCISSORS.png" alt="" />
       </div>
-      <div class="bg-white px-10 rounded-lg flex flex-col items-center justify-center m-4">
-        <div class="text-[#2A45C2]">SCORE</div>
-        <div id="score" class="text-5xl text-center">0</div>
+      <div class="bg-white rounded-lg flex flex-col items-center justify-center px-10 m-4">
+        <div class="text-[#2A45C2] font-semibold font-barlow tracking-[2.5px]">SCORE</div>
+        <div id="score" class="text-6xl text-[#565468] font-bold text-center">0</div>
       </div>
     </div>
 
     <!-- Game Zone -->
-    <section id="gameZone">
-      <div class="max-w-[476px] w-full mt-[72px] mx-auto bg-no-repeat bg-center" data-mode="simple" id="gameZoneInner">
-        <ul class="grid grid-cols-2 place-items-center relative">
+    <section id="gameZone" class="mt-16">
+      <div class="max-w-[476px] w-full mx-auto bg-no-repeat bg-center simple-mode" id="gameZoneInner">
+        <ul class="grid grid-cols-2 place-items-center relative gap-4">
           <li>
             <button class="hand">
               <img src="img/paper.svg" alt="paper" class="w-44" />
@@ -42,38 +47,50 @@
 
     <!-- Result Section -->
     <section id="secondGameZone" class="hidden">
-      <div class="flex items-center justify-between w-full mt-[72px] max-w-[800px] mx-auto">
+      <div class="flex items-center justify-between max-w-[800px] w-full mx-auto mt-[72px]">
         <div>
-          <img src="img/paper.svg" id="user" class="w-64" />
+          <p class="font-barlow font-bold text-[24px] mb-14 text-white text-center leading-[32px] tracking-[3px]">
+            YOU PICKED
+          </p>
+          <img src="img/paper.svg" id="user" class="w-72" />
         </div>
         <div class="px-16 text-center">
-          <p id="status" class="text-white text-4xl mb-4"></p>
+          <p id="status" class="text-white font-barlow font-bold text-[56px] tracking-[0px] w-60 mb-4"></p>
+
           <button
             id="refreshGame"
-            class="text-center w-52 py-4 uppercase bg-white rounded-lg text-blue-800 font-semibold"
+            class="py-[15px] w-52 uppercase bg-[#F3F3F3] rounded-lg text-blue-950 font-semibold text-[16px] leading-[100%] tracking-[2.5px] font-barlow"
           >
             Play again
           </button>
         </div>
         <div>
-          <img src="img/hand-load.svg" id="robot" class="w-64" />
+          <p class="font-barlow font-bold text-[24px] mb-14 text-white text-center leading-[32px] tracking-[3px]">
+            HOUSE PICKED
+          </p>
+
+          <img src="img/hand-load.svg" id="robot" class="w-72" />
         </div>
       </div>
     </section>
 
     <!-- Rules/Button -->
     <div class="absolute right-8 bottom-8">
-      <button id="rulesBtn" class="btn py-3 px-9 border border-white rounded-lg text-white">RULES</button>
-      <dialog id="modal" class="modal rounded-lg">
-        <div class="modal-box relative">
+      <button
+        class="py-2 px-9 border border-slate-400 hover:bg-[#F3F3F3] hover:text-blue-950 hover:border-[#F3F3F3] rounded-lg text-white tracking-[2.5px] font-barlow font-semibold"
+        onclick="rules_modal.showModal()"
+      >
+        RULES
+      </button>
+
+      <dialog id="rules_modal" class="modal">
+        <div class="relative bg-white rounded-lg p-6">
           <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-8 top-6">close</button>
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-5 top-5">✕</button>
           </form>
-          <div class="p-6">
-            <h1 class="text-3xl">RULES</h1>
-            <div class="pt-6">
-              <img src="img/rule-basic.png" id="ruleImage" />
-            </div>
+          <h1 class="text-3xl font-bold">RULES</h1>
+          <div class="pt-8">
+            <img src="img/rule-basic.png" class="mx-auto max-w-full h-auto" />
           </div>
         </div>
       </dialog>
